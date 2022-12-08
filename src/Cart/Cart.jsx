@@ -8,7 +8,7 @@ const Cart = (props) => {
     <Modal>
       <ul className={classes["cart-items"]}>
         {cartItems.map((eachItem) => (
-          <li>{eachItem.name}</li>
+          <li key={eachItem.id}>{eachItem.name}</li>
         ))}
       </ul>
       <div className={classes.total}>

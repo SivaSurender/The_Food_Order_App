@@ -4,6 +4,8 @@ import CartContext from "./CartContext";
 const defaultCartData = { items: [], totalAmount: 0 };
 
 const cartReducer = (state, action) => {
+  console.log(action, "action");
+  console.log(state, "state");
   if (action.type === "ADD") {
     const updatedItems = state.items.concat(action.item);
     const updatedTotalAmount =

@@ -2,6 +2,7 @@ import Cart from "./Cart/Cart";
 import Header from "./Layout/Header";
 import Meals from "./Meals/Meals";
 import { useState } from "react";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [showCartModal, setShowCartModal] = useState(false);
@@ -13,14 +14,16 @@ function App() {
   const closeCartHandler = () => {
     setShowCartModal(false);
   };
+  console.log(CartProvider);
+
   return (
-    <div>
+    <CartProvider>
       {showCartModal && <Cart onClick={closeCartHandler} />}
       <Header onClick={openCartHandler} />
       <main>
         <Meals />
       </main>
-    </div>
+    </CartProvider>
   );
 }
 

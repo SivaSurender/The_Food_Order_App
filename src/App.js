@@ -10,10 +10,12 @@ function App() {
     setShowCartModal(true);
   };
 
-  const closeCartHandler = () => {};
+  const closeCartHandler = () => {
+    setShowCartModal(false);
+  };
   return (
     <div>
-      {showCartModal && <Cart />}
+      {showCartModal && <Cart onClick={closeCartHandler} />}
       <Header onClick={openCartHandler} />
       <main>
         <Meals />

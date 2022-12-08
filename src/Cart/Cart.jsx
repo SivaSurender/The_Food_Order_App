@@ -1,11 +1,12 @@
 import React from "react";
-import classes from "./Cat.module.css";
+import Modal from "../UI/Modal";
+import classes from "./Cart.module.css";
 
 const Cart = (props) => {
   const cartItems = [{ id: "b1", name: "Curry", price: 75 }];
   return (
-    <div>
-      <ul>
+    <Modal>
+      <ul className={classes["cart-items"]}>
         {cartItems.map((eachItem) => (
           <li>{eachItem.name}</li>
         ))}
@@ -14,11 +15,11 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>40</span>
       </div>
-      <div className={classes.action}>
+      <div className={classes.actions}>
         <button className={classes["button--alt"]}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
